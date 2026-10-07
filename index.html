@@ -42,12 +42,12 @@ h1,h2,h3{font-family:Georgia,"Iowan Old Style","Palatino Linotype",serif;font-we
 a{color:inherit}
 .container{width:min(1180px,calc(100% - 40px));margin:auto}
 header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(13,33,28,.08)}
-.nav{height:86px;display:flex;align-items:center;gap:34px}
+.nav{height:96px;display:flex;align-items:center;gap:34px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:280px}
 .brand img{width:56px;height:56px;object-fit:contain}
 .brand-copy strong{display:block;font-size:19px;line-height:1.05;letter-spacing:-.3px}
 .brand-copy span{display:block;font-size:12px;margin-top:4px;color:#4a5750}
-.ally-logo{height:44px;width:auto;object-fit:contain;margin-left:4px}
+.ally-logo{height:72px;width:auto;object-fit:contain;margin-left:4px}
 nav{margin-left:auto;display:flex;align-items:center;gap:28px}
 nav a{text-decoration:none;font-size:14px;font-weight:600;position:relative;padding:6px 0}
 nav a:hover::after,nav a.active::after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:2px;background:var(--gold)}
@@ -151,8 +151,9 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
 .footer-brand span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#c8d4de}
 .footer-quote{font-style:italic;color:#aebccb;max-width:420px;font-size:14px}
 .allies{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.allies .tag{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:8px 16px;font-size:12.5px;font-weight:650;color:#dfe9f1;display:inline-flex;align-items:center;gap:7px}
-.allies .tag img{height:18px;width:auto;object-fit:contain;background:#fff;border-radius:3px;padding:1px}
+.allies .tag{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:8px 16px;font-size:12.5px;font-weight:650;color:#dfe9f1;display:inline-flex;align-items:center;gap:9px}
+.allies .tag.ally-badge{padding:6px 18px 6px 9px}
+.allies .tag img{height:40px;width:auto;object-fit:contain;background:#fff;border-radius:6px;padding:2px}
 .footer-contact strong{display:block;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#9fb1c0;margin-bottom:10px}
 .footer-contact a{display:block;font-size:14.5px;color:#eaf1f6;text-decoration:none;margin-bottom:6px}
 .social{display:flex;gap:12px;align-items:center;margin-top:16px}
@@ -179,7 +180,7 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
 .google-hint svg{width:16px;height:16px}
 
 @media(max-width:920px){
- .brand{min-width:0} .brand-copy span{display:none} .ally-logo{height:34px} nav{display:none} .menu{display:block;margin-left:auto}
+ .brand{min-width:0} .brand-copy span{display:none} .ally-logo{height:54px} nav{display:none} .menu{display:block;margin-left:auto}
  nav.open{display:flex;position:absolute;top:86px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:4px;background:#fff;padding:14px 20px 20px;border-bottom:1px solid var(--line);box-shadow:0 16px 30px rgba(7,31,56,.12)}
  nav.open a{padding:10px 0;width:100%}
  .hero-inner{grid-template-columns:1fr} .hero-side{justify-content:flex-start} .values{margin-top:8px}
@@ -190,7 +191,7 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
  .footer-top{grid-template-columns:1fr}
 }
 @media(max-width:560px){
- .container{width:min(100% - 26px,1180px)} .nav{height:70px} .brand img{width:44px;height:44px} .brand-copy strong{font-size:16px} .ally-logo{height:28px} .nav-cta{display:none}
+ .container{width:min(100% - 26px,1180px)} .nav{height:76px} .brand img{width:44px;height:44px} .brand-copy strong{font-size:16px} .ally-logo{height:46px} .nav-cta{display:none}
  .hero{min-height:480px;background-position:68% center} .hero-inner{padding:44px 0} .hero p{font-size:16px} .values{font-size:11px}
  .section-head{text-align:left} .card-body{padding-left:22px;padding-right:22px} .card-media{height:190px}
  .benefit-grid{grid-template-columns:1fr} .benefit:last-child{grid-column:auto} .mini-grid{grid-template-columns:1fr}
@@ -361,7 +362,7 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
    <div class="eyebrow" style="margin-top:22px;color:#9fb1c0">Impulsores y aliados</div>
    <div class="allies" style="margin-top:10px">
     <span class="tag">FUNVECRIM</span>
-    <span class="tag"><img src="assets/logo-escuela-criminologia.png" alt="">Escuela de Criminología ULA</span>
+    <span class="tag ally-badge"><img src="assets/logo-escuela-criminologia.png" alt="">Escuela de Criminología ULA</span>
     <!-- TODO: agregar más aliados a medida que se confirmen -->
     <span class="tag">Más aliados</span>
    </div>
