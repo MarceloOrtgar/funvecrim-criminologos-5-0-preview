@@ -43,11 +43,11 @@ a{color:inherit}
 .container{width:min(1180px,calc(100% - 40px));margin:auto}
 header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(13,33,28,.08)}
 .nav{height:96px;display:flex;align-items:center;gap:34px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:280px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
 .brand img{width:56px;height:56px;object-fit:contain}
 .brand-copy strong{display:block;font-size:19px;line-height:1.05;letter-spacing:-.3px}
 .brand-copy span{display:block;font-size:12px;margin-top:4px;color:#4a5750}
-.ally-logo{height:72px;width:auto;object-fit:contain;margin-left:4px}
+.ally-logo{height:72px;width:auto;object-fit:contain;margin-left:-20px}
 nav{margin-left:auto;display:flex;align-items:center;gap:28px}
 nav a{text-decoration:none;font-size:14px;font-weight:600;position:relative;padding:6px 0}
 nav a:hover::after,nav a.active::after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:2px;background:var(--gold)}
@@ -204,7 +204,6 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
  <div class="container nav">
   <a class="brand" href="#inicio" aria-label="FUNVECRIM, inicio">
    <img src="assets/logo.png" alt="Logo FUNVECRIM" />
-   <div class="brand-copy"><strong>FUNVECRIM</strong><span>Fundación Venezolana de Criminología</span></div>
   </a>
   <!-- TODO: logo de aliado puesto "de momento" por pedido de Orlando (2026-10-06); confirmar si se queda fijo o es temporal -->
   <img class="ally-logo" src="assets/logo-escuela-criminologia.png" alt="Escuela de Criminología, Universidad de los Andes" />
@@ -237,7 +236,7 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
  <div class="container">
   <div class="section-head">
    <div class="eyebrow">Participa en el movimiento</div>
-   <h2>Regístrate, opina y fórmate con el gremio criminológico</h2>
+   <h2>Regístrate, opina y fórmate con el gremio criminológico venezolano.</h2>
    <p>Registro profesional, consulta gremial y formación para impulsar una práctica con mayor reconocimiento, organización e impacto social.</p>
   </div>
   <div class="cards">
@@ -249,7 +248,7 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
     </div>
     <div class="card-body">
      <div class="label" style="color:var(--navy)">Registro</div>
-     <h3>Registro Nacional de Criminólogos en Venezuela 2026</h3>
+     <h3>Registro Nacional de Criminólogos Venezolanos 2026</h3>
      <p>Ingresa tus datos, fortalece tu perfil profesional y sé parte de la iniciativa que busca impulsar nuestra Ley de Ejercicio Profesional.</p>
      <button class="btn navy" type="button" onclick="openForm('registro')">Ingresa aquí <span>›</span></button>
      <div class="card-note">Regístrate con tu cuenta de Google en menos de 2 minutos</div>
@@ -361,7 +360,6 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
    <p class="footer-quote">La criminología también es una forma de construir país.</p>
    <div class="eyebrow" style="margin-top:22px;color:#9fb1c0">Impulsores y aliados</div>
    <div class="allies" style="margin-top:10px">
-    <span class="tag">FUNVECRIM</span>
     <span class="tag ally-badge"><img src="assets/logo-escuela-criminologia.png" alt="">Escuela de Criminología ULA</span>
     <!-- TODO: agregar más aliados a medida que se confirmen -->
     <span class="tag">Más aliados</span>
