@@ -163,13 +163,15 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
 /* Modal de registro (embebe formulario) */
 .modal-overlay{position:fixed;inset:0;background:rgba(3,15,28,.6);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
 .modal-overlay.open{display:flex}
-.modal{background:#fff;border-radius:20px;max-width:560px;width:100%;max-height:85vh;overflow:auto;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.modal{background:#fff;border-radius:20px;max-width:680px;width:100%;max-height:88vh;overflow:auto;box-shadow:0 24px 60px rgba(0,0,0,.35)}
 .modal-head{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--line)}
 .modal-head h3{margin:0;font-size:19px}
 .modal-close{border:0;background:#f1f3f5;width:34px;height:34px;border-radius:50%;font-size:18px;cursor:pointer;color:#45525f}
 .modal-body{padding:22px 24px 26px}
 .modal-body p{color:var(--muted);font-size:14.5px;margin:0 0 16px}
-.gform-frame{width:100%;height:420px;border:1px solid var(--line);border-radius:10px}
+.gform-frame{width:100%;height:520px;border:1px solid var(--line);border-radius:10px}
+.form-alt{font-size:13px;color:var(--muted);margin-top:8px;text-align:center}
+.form-alt a{color:var(--navy);font-weight:600}
 .gform-placeholder{border:1px dashed var(--line);border-radius:10px;padding:30px 20px;text-align:center;color:#8893a1;font-size:13.5px}
 .google-hint{display:flex;align-items:center;gap:8px;font-size:12.5px;color:#5a6a7a;margin-top:14px}
 .info-block{border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:0 0 18px;background:var(--paper)}
@@ -331,8 +333,7 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
     <div class="eyebrow">Hoja de ruta del movimiento</div>
     <h2>Conoce las acciones de Criminólogos 5.0</h2>
     <p>Revisa el esquema con las líneas de trabajo, hitos y próximos pasos del movimiento gremial, organizado de forma visual para que cualquier criminólogo pueda seguirlo.</p>
-    <!-- TODO: pegar aquí el link real del tablero de Miro (o plataforma equivalente) cuando exista -->
-    <a class="btn navy" href="#" target="_blank" rel="noopener">Ver esquema de acciones <span>›</span></a>
+    <a class="btn navy" href="https://miro.com/app/board/uXjVEb9RklY=/?share_link_id=560362666481" target="_blank" rel="noopener">Ver esquema de acciones <span>›</span></a>
    </div>
    <div class="actions-visual">
     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
@@ -387,9 +388,8 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
   <div class="modal-body">
    <p id="formModalDesc">Completa el formulario para unirte a la iniciativa.</p>
    <div id="formExtra"></div>
-   <!-- TODO: cuando exista el Google Form, reemplazar el bloque de abajo por:
-        <iframe class="gform-frame" src="URL_DEL_FORM_EMBED" loading="lazy">Cargando…</iframe> -->
-   <div class="gform-placeholder" id="formPlaceholder">El formulario de Google se conecta aquí mismo (sin salir de la página). Aún falta pegar el enlace del formulario.</div>
+   <div class="gform-placeholder" id="formPlaceholder"></div>
+   <div class="form-alt" id="formAltLink"></div>
    <div class="google-hint">
     <svg viewBox="0 0 24 24"><path fill="currentColor" d="M21.8 12.2c0-.7-.06-1.4-.18-2H12v3.9h5.5a4.7 4.7 0 0 1-2 3.1v2.6h3.3c1.9-1.8 3-4.4 3-7.6Z"/><path fill="currentColor" d="M12 22c2.7 0 5-.9 6.7-2.4l-3.3-2.6c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3v2.6A10 10 0 0 0 12 22Z"/></svg>
    Se completa con tu cuenta de Google — rápido y sin crear contraseñas nuevas.</div>
@@ -400,10 +400,10 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
 <script>
 document.getElementById('year').textContent=new Date().getFullYear();
 
-/* TODO: pegar aquí las URLs reales de cada formulario (Google Form o Kobo, versión "embed") */
+/* Google Forms enviados por Orlando el 2026-10-12 (versión embed). El taller aún no tiene formulario. */
 var FORMS = {
- registro: { title: 'Registro Nacional de Criminólogos', desc: 'Ingresa tus datos para formar parte del Registro Nacional de Criminólogos en Venezuela 2026.', src: '' },
- consulta: { title: 'Consulta Nacional Profesional Gremial', desc: 'Tu opinión ayuda a definir las prioridades del gremio. Toma solo unos minutos.', src: '' },
+ registro: { title: 'Registro Nacional de Criminólogos Venezolanos 2026', desc: 'Ingresa tus datos para formar parte del Registro Nacional (Censo) de Criminólogos Venezolanos 2026.', src: 'https://docs.google.com/forms/d/e/1FAIpQLSe8wAssxUEdsTpEIVyRYff_t9Ajo-QTpa-kxwP-NSnX-6oKJQ/viewform?embedded=true', link: 'https://forms.gle/WMhhmWezPVewpQwt8' },
+ consulta: { title: 'Consulta Nacional de Criminólogos Venezolanos 2026', desc: 'Tu opinión ayuda a definir las prioridades del gremio. Toma solo unos minutos.', src: 'https://docs.google.com/forms/d/e/1FAIpQLSdnUbJx6Mg36ibPYPLKAywL9Kf2nL1fcWn42OkSb7muSuFiDw/viewform?embedded=true', link: 'https://forms.gle/vr1X2QmzH54RricE9' },
  taller:   { title: 'Taller de Evaluación de Riesgo de la Violencia', desc: 'Conoce a la facilitadora y el programa antes de inscribirte.', src: '',
   /* TODO: reemplazar con la bio real de la facilitadora y el programa definitivo del taller */
   extra: '<div class="info-block"><h4>Sobre la facilitadora</h4><p>TODO: nombre, credenciales y trayectoria de la facilitadora del taller.</p><h4>Programa</h4><ul><li>TODO: módulo 1</li><li>TODO: módulo 2</li><li>TODO: módulo 3</li></ul></div>' }
@@ -419,8 +419,10 @@ function openForm(key){
  if(data.src){
   ph.outerHTML = '<iframe class="gform-frame" id="formPlaceholder" src="'+data.src+'" loading="lazy">Cargando…</iframe>';
  } else {
-  ph.textContent = 'El formulario se conecta aquí mismo (sin salir de la página). Aún falta pegar el enlace del formulario.';
+  ph.outerHTML = '<div class="gform-placeholder" id="formPlaceholder">Las inscripciones al taller se abrirán pronto aquí mismo.</div>';
  }
+ var alt = document.getElementById('formAltLink');
+ alt.innerHTML = data.link ? '¿No carga el formulario? <a href="'+data.link+'" target="_blank" rel="noopener">Ábrelo en una pestaña nueva</a>' : '';
  document.getElementById('formModal').classList.add('open');
 }
 function closeForm(){ document.getElementById('formModal').classList.remove('open'); }
