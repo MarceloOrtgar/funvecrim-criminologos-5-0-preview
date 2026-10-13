@@ -134,6 +134,32 @@ nav a:hover::after,nav a.active::after{content:"";position:absolute;left:0;right
 .actions-visual svg{width:92px;height:92px;stroke:var(--gold);fill:none;stroke-width:1.4}
 @media(max-width:920px){.actions-panel{grid-template-columns:1fr}.actions-visual{order:-1;min-height:160px}}
 
+/* Calendario del II Encuentro Nacional (Tablero Estratégico, nov-dic 2026) */
+.timeline-wrap{margin-top:44px}
+.timeline-head{text-align:center;margin-bottom:26px}
+.timeline-head h3{font-size:28px;margin:8px 0 6px}
+.timeline-head p{color:var(--muted);margin:0;font-size:16px}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative;list-style:none;margin:0;padding:0}
+.timeline::before{content:"";position:absolute;top:21px;left:16.6%;right:16.6%;height:2px;background:var(--navy);opacity:.25}
+.tl-item{text-align:center;position:relative}
+.tl-dot{width:44px;height:44px;border-radius:50%;background:var(--gold);margin:0 auto 16px;display:grid;place-items:center;color:#2a1a04;font-weight:800;font-size:15px;box-shadow:0 0 0 6px #fff,0 6px 16px rgba(7,31,56,.15);position:relative;z-index:1}
+.tl-card{border:1px solid var(--line);border-radius:16px;background:#fff;padding:20px 20px 22px;height:calc(100% - 60px);box-shadow:0 10px 30px rgba(13,33,28,.05);transition:transform .25s ease,box-shadow .25s ease}
+.tl-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.tl-date{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--blue)}
+.tl-card h4{font-family:Georgia,"Iowan Old Style","Palatino Linotype",serif;font-size:20px;margin:6px 0 10px;color:var(--ink)}
+.tl-card p{font-size:14.5px;color:var(--muted);margin:0}
+.tl-card.featured{background:linear-gradient(145deg,#082f51,#0c507b);border-color:transparent}
+.tl-card.featured .tl-date{color:var(--gold)}
+.tl-card.featured h4{color:#fff}
+.tl-card.featured p{color:#d7e7f3}
+@media(max-width:920px){
+ .timeline{grid-template-columns:1fr;gap:18px}
+ .timeline::before{top:0;bottom:0;left:21px;right:auto;width:2px;height:auto}
+ .tl-item{display:grid;grid-template-columns:44px 1fr;gap:16px;text-align:left}
+ .tl-dot{margin:0}
+ .tl-card{height:auto}
+}
+
 .cta{background:linear-gradient(90deg,rgba(7,31,56,.96),rgba(7,31,56,.78)),url('assets/cta-bg.jpg') center/cover no-repeat;color:#fff;padding:56px 0;border-top:2px solid var(--gold)}
 .cta-inner{display:flex;align-items:center;justify-content:space-between;gap:40px}
 .cta-copy{border-left:4px solid var(--gold);padding-left:28px}
@@ -338,6 +364,20 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
    <div class="actions-visual">
     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
    </div>
+  </div>
+
+  <!-- Calendario del II Encuentro Nacional — datos del Tablero Estratégico de Orlando (2026-10-12) -->
+  <div class="timeline-wrap">
+   <div class="timeline-head">
+    <div class="eyebrow">Próximo paso · Noviembre — Diciembre 2026</div>
+    <h3>II Encuentro Nacional</h3>
+    <p>Las fechas clave para participar en esta nueva etapa del movimiento.</p>
+   </div>
+   <ol class="timeline">
+    <li class="tl-item"><div class="tl-dot">1</div><div class="tl-card"><div class="tl-date">21 de noviembre</div><h4>Jornada inaugural: Criminología 5.0</h4><p>Presentación de la iniciativa digital y apertura de la Consulta Nacional y del Registro Nacional.</p></div></li>
+    <li class="tl-item"><div class="tl-dot">2</div><div class="tl-card"><div class="tl-date">23 al 27 de noviembre</div><h4>Semana Criminológica 5.0</h4><p>Foro chat con expertos: criminología contemporánea, violencia, investigación criminal, sistema penitenciario, ética y contexto venezolano.</p></div></li>
+    <li class="tl-item"><div class="tl-dot">3</div><div class="tl-card featured"><div class="tl-date">30 nov — 11 dic</div><h4>Taller Internacional</h4><p>Evaluación de Riesgo de Violencias, con la Dra. Karin Arbach. <a href="#formacion" onclick="openForm('taller');return false;" style="color:var(--gold);font-weight:700">Ver detalles ›</a></p></div></li>
+   </ol>
   </div>
  </div>
 </section>
