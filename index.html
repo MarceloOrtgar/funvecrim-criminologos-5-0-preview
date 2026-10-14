@@ -279,7 +279,7 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
      <h3>Registro Nacional de Criminólogos Venezolanos 2026</h3>
      <p>Ingresa tus datos, fortalece tu perfil profesional y sé parte de la iniciativa que busca impulsar nuestra Ley de Ejercicio Profesional.</p>
      <button class="btn navy" type="button" onclick="openForm('registro')">Ingresa aquí <span>›</span></button>
-     <div class="card-note">Regístrate con tu cuenta de Google en menos de 2 minutos</div>
+     <div class="card-note" data-opens-note>Regístrate con tu cuenta de Google en menos de 2 minutos</div>
     </div>
    </article>
    <article class="card" id="consulta">
@@ -293,7 +293,7 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
      <h3>Consulta Nacional Profesional Gremial</h3>
      <p>Tu voz también cuenta. Participa en la consulta que orientará las líneas de acción del gremio criminológico en Venezuela.</p>
      <button class="btn teal" type="button" onclick="openForm('consulta')">Participa aquí <span>›</span></button>
-     <div class="card-note">Regístrate con tu cuenta de Google en menos de 2 minutos</div>
+     <div class="card-note" data-opens-note>Regístrate con tu cuenta de Google en menos de 2 minutos</div>
     </div>
    </article>
    <article class="card" id="formacion">
@@ -441,12 +441,15 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
 document.getElementById('year').textContent=new Date().getFullYear();
 
 /* Google Forms enviados por Orlando el 2026-10-12 (versión embed). El taller aún no tiene formulario. */
+/* Orlando (2026-10-13): Consulta y Registro abren el 21 de noviembre. Hasta entonces se muestra el aviso en vez del formulario. 21-nov 00:00 hora de Venezuela (UTC-4). */
+var FORMS_OPEN = new Date('2026-11-21T04:00:00Z');
+var formsOpen = function(){ return new Date() >= FORMS_OPEN; };
 var FORMS = {
- registro: { title: 'Registro Nacional de Criminólogos Venezolanos 2026', desc: 'Ingresa tus datos para formar parte del Registro Nacional (Censo) de Criminólogos Venezolanos 2026.', src: 'https://docs.google.com/forms/d/e/1FAIpQLSe8wAssxUEdsTpEIVyRYff_t9Ajo-QTpa-kxwP-NSnX-6oKJQ/viewform?embedded=true', link: 'https://forms.gle/WMhhmWezPVewpQwt8' },
- consulta: { title: 'Consulta Nacional de Criminólogos Venezolanos 2026', desc: 'Tu opinión ayuda a definir las prioridades del gremio. Toma solo unos minutos.', src: 'https://docs.google.com/forms/d/e/1FAIpQLSdnUbJx6Mg36ibPYPLKAywL9Kf2nL1fcWn42OkSb7muSuFiDw/viewform?embedded=true', link: 'https://forms.gle/vr1X2QmzH54RricE9' },
+ registro: { title: 'Registro Nacional de Criminólogos Venezolanos 2026', desc: 'Ingresa tus datos para formar parte del Registro Nacional (Censo) de Criminólogos Venezolanos 2026.', src: 'https://docs.google.com/forms/d/e/1FAIpQLSe8wAssxUEdsTpEIVyRYff_t9Ajo-QTpa-kxwP-NSnX-6oKJQ/viewform?embedded=true', link: 'https://forms.gle/WMhhmWezPVewpQwt8', opens: true },
+ consulta: { title: 'Consulta Nacional de Criminólogos Venezolanos 2026', desc: 'Tu opinión ayuda a definir las prioridades del gremio. Toma solo unos minutos.', src: 'https://docs.google.com/forms/d/e/1FAIpQLSdnUbJx6Mg36ibPYPLKAywL9Kf2nL1fcWn42OkSb7muSuFiDw/viewform?embedded=true', link: 'https://forms.gle/vr1X2QmzH54RricE9', opens: true },
  taller:   { title: 'Taller de Evaluación de Riesgo de la Violencia', desc: 'Conoce a la facilitadora y el programa antes de inscribirte.', src: '',
   /* Datos del "Tablero Estratégico Profesional" (PDF de Orlando, 2026-10-12). TODO: bio de la facilitadora y programa cuando Orlando los envíe */
-  extra: '<div class="info-block"><h4>Taller Internacional</h4><ul><li><strong>Especialista:</strong> Dra. Karin Arbach</li><li><strong>Fechas:</strong> 30 de noviembre al 11 de diciembre de 2026</li><li><strong>Modalidad:</strong> sincrónica + asincrónica + caso guiado</li></ul><h4>Programa</h4><p>Próximamente publicaremos el programa completo y el perfil de la facilitadora.</p></div>' }
+  extra: '<div class="info-block"><h4>Taller Internacional</h4><ul><li><strong>Especialista:</strong> Dra. Karin Arbach</li><li><strong>Fechas:</strong> 30 de noviembre al 11 de diciembre de 2026</li><li><strong>Modalidad:</strong> sincrónica + asincrónica + caso guiado</li><li><strong>Inscripción:</strong> $40 (pagaderos en bolívares a tasa BCV)</li></ul><h4>Programa</h4><p>Próximamente publicaremos el programa completo y el perfil de la facilitadora.</p></div>' }
 };
 
 function openForm(key){
@@ -456,16 +459,19 @@ function openForm(key){
  document.getElementById('formModalDesc').textContent = data.desc;
  document.getElementById('formExtra').innerHTML = data.extra || '';
  var ph = document.getElementById('formPlaceholder');
- if(data.src){
+ if(data.opens && !formsOpen()){
+  ph.outerHTML = '<div class="gform-placeholder" id="formPlaceholder"><strong>Abre el 21 de noviembre</strong><br>El formulario se activa en la jornada inaugural del II Encuentro Nacional. ¡Vuelve ese día!</div>';
+ } else if(data.src){
   ph.outerHTML = '<iframe class="gform-frame" id="formPlaceholder" src="'+data.src+'" loading="lazy">Cargando…</iframe>';
  } else {
   ph.outerHTML = '<div class="gform-placeholder" id="formPlaceholder">Las inscripciones al taller se abrirán pronto aquí mismo.</div>';
  }
  var alt = document.getElementById('formAltLink');
- alt.innerHTML = data.link ? '¿No carga el formulario? <a href="'+data.link+'" target="_blank" rel="noopener">Ábrelo en una pestaña nueva</a>' : '';
+ alt.innerHTML = (data.link && !(data.opens && !formsOpen())) ? '¿No carga el formulario? <a href="'+data.link+'" target="_blank" rel="noopener">Ábrelo en una pestaña nueva</a>' : '';
  document.getElementById('formModal').classList.add('open');
 }
 function closeForm(){ document.getElementById('formModal').classList.remove('open'); }
+if(!formsOpen()) document.querySelectorAll('[data-opens-note]').forEach(function(n){ n.innerHTML = '<strong>Abre el 21 de noviembre</strong> · con tu cuenta de Google'; });
 document.getElementById('formModal').addEventListener('click', function(e){ if(e.target === this) closeForm(); });
 document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeForm(); });
 
