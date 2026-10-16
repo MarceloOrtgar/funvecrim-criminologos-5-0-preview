@@ -305,9 +305,9 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
     <div class="card-body">
      <div class="label" style="color:var(--purple)">Formación</div>
      <h3>Taller de Formación Profesional en Evaluación de Riesgo de la Violencia</h3>
-     <p>Desarrolla tus competencias en la identificación y valoración del riesgo, con enfoque práctico y basado en evidencia. Conoce a la facilitadora y el programa del taller.</p>
-     <button class="btn purple" type="button" onclick="openForm('taller')">Para más información <span>›</span></button>
-     <div class="card-note">Conoce a la facilitadora y el programa del taller</div>
+     <p>Taller internacional con la Dra. Karin Arbach (CONICET, Argentina): del análisis de factores a la formulación del riesgo, con enfoque práctico y basado en evidencia.</p>
+     <a class="btn purple" href="taller.html">Para más información <span>›</span></a>
+     <div class="card-note">30 nov — 11 dic 2026 · Preinscripción abierta</div>
     </div>
    </article>
   </div>
@@ -376,7 +376,7 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
    <ol class="timeline">
     <li class="tl-item"><div class="tl-dot">1</div><div class="tl-card"><div class="tl-date">21 de noviembre</div><h4>Jornada inaugural: Criminología 5.0</h4><p>Presentación de la iniciativa digital y apertura de la Consulta Nacional y del Registro Nacional.</p></div></li>
     <li class="tl-item"><div class="tl-dot">2</div><div class="tl-card"><div class="tl-date">23 al 27 de noviembre</div><h4>Semana Criminológica 5.0</h4><p>Foro chat con expertos: criminología contemporánea, violencia, investigación criminal, sistema penitenciario, ética y contexto venezolano.</p></div></li>
-    <li class="tl-item"><div class="tl-dot">3</div><div class="tl-card featured"><div class="tl-date">30 nov — 11 dic</div><h4>Taller Internacional</h4><p>Evaluación de Riesgo de Violencias, con la Dra. Karin Arbach. <a href="#formacion" onclick="openForm('taller');return false;" style="color:var(--gold);font-weight:700">Ver detalles ›</a></p></div></li>
+    <li class="tl-item"><div class="tl-dot">3</div><div class="tl-card featured"><div class="tl-date">30 nov — 11 dic</div><h4>Taller Internacional</h4><p>Evaluación de Riesgo de Violencias, con la Dra. Karin Arbach. <a href="taller.html" style="color:var(--gold);font-weight:700">Ver detalles ›</a></p></div></li>
    </ol>
   </div>
  </div>
@@ -440,16 +440,13 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
 <script>
 document.getElementById('year').textContent=new Date().getFullYear();
 
-/* Google Forms enviados por Orlando el 2026-10-12 (versión embed). El taller aún no tiene formulario. */
+/* Google Forms enviados por Orlando el 2026-10-12 (versión embed). El taller tiene página propia: taller.html */
 /* Orlando (2026-10-13): Consulta y Registro abren el 21 de noviembre. Hasta entonces se muestra el aviso en vez del formulario. 21-nov 00:00 hora de Venezuela (UTC-4). */
 var FORMS_OPEN = new Date('2026-11-21T04:00:00Z');
 var formsOpen = function(){ return new Date() >= FORMS_OPEN; };
 var FORMS = {
  registro: { title: 'Registro Nacional de Criminólogos Venezolanos 2026', desc: 'Ingresa tus datos para formar parte del Registro Nacional (Censo) de Criminólogos Venezolanos 2026.', src: 'https://docs.google.com/forms/d/e/1FAIpQLSe8wAssxUEdsTpEIVyRYff_t9Ajo-QTpa-kxwP-NSnX-6oKJQ/viewform?embedded=true', link: 'https://forms.gle/WMhhmWezPVewpQwt8', opens: true },
- consulta: { title: 'Consulta Nacional de Criminólogos Venezolanos 2026', desc: 'Tu opinión ayuda a definir las prioridades del gremio. Toma solo unos minutos.', src: 'https://docs.google.com/forms/d/e/1FAIpQLSdnUbJx6Mg36ibPYPLKAywL9Kf2nL1fcWn42OkSb7muSuFiDw/viewform?embedded=true', link: 'https://forms.gle/vr1X2QmzH54RricE9', opens: true },
- taller:   { title: 'Taller de Evaluación de Riesgo de la Violencia', desc: 'Conoce a la facilitadora y el programa antes de inscribirte.', src: '',
-  /* Datos del "Tablero Estratégico Profesional" (PDF de Orlando, 2026-10-12). TODO: bio de la facilitadora y programa cuando Orlando los envíe */
-  extra: '<div class="info-block"><h4>Taller Internacional</h4><ul><li><strong>Especialista:</strong> Dra. Karin Arbach</li><li><strong>Fechas:</strong> 30 de noviembre al 11 de diciembre de 2026</li><li><strong>Modalidad:</strong> sincrónica + asincrónica + caso guiado</li><li><strong>Inscripción:</strong> $40 (pagaderos en bolívares a tasa BCV)</li></ul><h4>Programa</h4><p>Próximamente publicaremos el programa completo y el perfil de la facilitadora.</p></div>' }
+ consulta: { title: 'Consulta Nacional de Criminólogos Venezolanos 2026', desc: 'Tu opinión ayuda a definir las prioridades del gremio. Toma solo unos minutos.', src: 'https://docs.google.com/forms/d/e/1FAIpQLSdnUbJx6Mg36ibPYPLKAywL9Kf2nL1fcWn42OkSb7muSuFiDw/viewform?embedded=true', link: 'https://forms.gle/vr1X2QmzH54RricE9', opens: true }
 };
 
 function openForm(key){
@@ -464,7 +461,7 @@ function openForm(key){
  } else if(data.src){
   ph.outerHTML = '<iframe class="gform-frame" id="formPlaceholder" src="'+data.src+'" loading="lazy">Cargando…</iframe>';
  } else {
-  ph.outerHTML = '<div class="gform-placeholder" id="formPlaceholder">Las inscripciones al taller se abrirán pronto aquí mismo.</div>';
+  ph.outerHTML = '<div class="gform-placeholder" id="formPlaceholder">Formulario disponible pronto.</div>';
  }
  var alt = document.getElementById('formAltLink');
  alt.innerHTML = (data.link && !(data.opens && !formsOpen())) ? '¿No carga el formulario? <a href="'+data.link+'" target="_blank" rel="noopener">Ábrelo en una pestaña nueva</a>' : '';
