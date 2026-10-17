@@ -294,6 +294,10 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
 
 .t-cta-btns{display:flex;flex-direction:column;align-items:center;gap:10px}
 .t-mail{color:#cfe2ee;font-size:14px}
+.t-cta-btns button.btn{border:0;cursor:pointer;font-family:inherit;font-size:16px}
+.t-form{margin-top:32px}
+.t-form iframe{display:block;width:100%;max-width:760px;height:1500px;margin:0 auto;border:0;border-radius:16px;background:#fff}
+.t-form-alt{display:block;text-align:center;margin-top:12px;color:#cfe2ee;font-size:14px}
 
 .lb{position:fixed;inset:0;background:rgba(3,15,28,.88);display:none;flex-direction:column;align-items:center;justify-content:center;gap:16px;z-index:120;padding:20px}
 .lb.open{display:flex}
@@ -496,13 +500,16 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
   <div class="cta-copy">
    <small>Preinscripción abierta</small>
    <h2>Asegura tu <span>cupo</span></h2>
-   <p>Inscripción: $40, pagaderos en bolívares a tasa BCV. Escríbenos y te enviamos los datos para preinscribirte.</p>
+   <p>Inscripción: $40, pagaderos en bolívares a tasa BCV. Llena el formulario de preinscripción y te contactaremos con los datos para formalizar tu inscripción.</p>
   </div>
-  <!-- TODO: cuando Orlando envíe el formulario de preinscripción del taller, apuntar este botón a ese formulario -->
   <div class="t-cta-btns">
-   <a class="btn" href="https://wa.me/584164720862?text=Hola%2C%20quiero%20preinscribirme%20en%20el%20Taller%20de%20Evaluaci%C3%B3n%20de%20Riesgo%20de%20Violencias" target="_blank" rel="noopener">Preinscríbete por WhatsApp <span>›</span></a>
-   <a class="t-mail" href="mailto:Funvecrim@gmail.com?subject=Preinscripci%C3%B3n%20Taller%20Evaluaci%C3%B3n%20de%20Riesgo%20de%20Violencias">o escríbenos a Funvecrim@gmail.com</a>
+   <button class="btn" type="button" id="pre-toggle" aria-expanded="false" aria-controls="pre-form">Preinscríbete aquí <span>›</span></button>
+   <a class="t-mail" href="https://wa.me/584164720862?text=Hola%2C%20tengo%20una%20duda%20sobre%20el%20Taller%20de%20Evaluaci%C3%B3n%20de%20Riesgo%20de%20Violencias" target="_blank" rel="noopener">¿Dudas? Escríbenos por WhatsApp o a Funvecrim@gmail.com</a>
   </div>
+ </div>
+ <div class="container t-form" id="pre-form" hidden>
+  <iframe data-src="https://docs.google.com/forms/d/e/1FAIpQLSdok_3_rpWeoCXYSImQBFReZEPF9RpGsmcrVZJkwdqNnYKhlw/viewform?embedded=true" title="Formulario de preinscripción al taller" loading="lazy">Cargando…</iframe>
+  <a class="t-form-alt" href="https://docs.google.com/forms/d/e/1FAIpQLSdok_3_rpWeoCXYSImQBFReZEPF9RpGsmcrVZJkwdqNnYKhlw/viewform" target="_blank" rel="noopener">¿No carga? Abre el formulario en una pestaña nueva ↗</a>
  </div>
 </section>
 </main>
@@ -547,6 +554,13 @@ document.querySelectorAll('[data-lb]').forEach(function(a){
 function closeLb(){ lb.classList.remove('open'); }
 lb.addEventListener('click', function(e){ if(e.target===lb || e.target.classList.contains('lb-close')) closeLb(); });
 document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeLb(); });
+</script>
+<script>
+(function(){var b=document.getElementById('pre-toggle'),f=document.getElementById('pre-form');if(!b||!f)return;
+function open(){var i=f.querySelector('iframe');if(!i.src)i.src=i.dataset.src;f.hidden=false;b.setAttribute('aria-expanded','true');f.scrollIntoView({behavior:'smooth',block:'start'})}
+b.addEventListener('click',function(){f.hidden?open():(f.hidden=true,b.setAttribute('aria-expanded','false'))});
+document.querySelectorAll('a[href="#preinscripcion"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();open()})});
+if(location.hash==='#preinscripcion')open();})();
 </script>
 </body>
 </html>
