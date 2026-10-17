@@ -11,7 +11,10 @@
 <meta property="og:description" content="Taller internacional de Evaluación de Riesgo de Violencias con la Dra. Karin Arbach (CONICET, Argentina). 30 de noviembre al 11 de diciembre de 2026. Criminólogos 5.0." />
 <meta property="og:image" content="assets/taller/flyer-taller.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
+<script>/* Hasta el 21-nov (apertura de Consulta y Registro) esta página se difunde sola: sin enlaces al resto del sitio */
+if(new Date()<new Date('2026-11-21T04:00:00Z'))document.documentElement.classList.add('pre21');</script>
 <style>
+html.pre21 .full,html:not(.pre21) .pre{display:none!important}
 :root{
  --navy:#0a3258; --navy2:#071f38; --blue:#0b5a8c; --gold:#e2a73f; --ink:#0c2238;
  --muted:#5c6c7c; --paper:#f6f3ee; --line:#dde2e6; --teal:#2f8a8a; --purple:#7a4178; --white:#fff;
@@ -329,13 +332,14 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
 <body>
 <header>
  <div class="container nav">
-  <a class="brand" href="index.html" aria-label="FUNVECRIM, inicio">
+  <a class="brand full" href="index.html" aria-label="FUNVECRIM, inicio">
    <img src="assets/logo.png" alt="Logo FUNVECRIM" />
   </a>
+  <span class="brand pre"><img src="assets/logo.png" alt="Logo FUNVECRIM" /></span>
   <!-- TODO: logo de aliado puesto "de momento" por pedido de Orlando (2026-10-06); confirmar si se queda fijo o es temporal -->
   <img class="ally-logo" src="assets/logo-escuela-criminologia.png" alt="Escuela de Criminología, Universidad de los Andes" />
   <nav aria-label="Navegación principal">
-   <a href="index.html#inicio">Inicio</a><a href="index.html#movimiento">Movimiento</a><a href="index.html#participa">Participa</a><a href="index.html#acciones">Acciones</a><a href="#contacto">Contacto</a>
+   <a class="full" href="index.html#inicio">Inicio</a><a class="full" href="index.html#movimiento">Movimiento</a><a class="full" href="index.html#participa">Participa</a><a class="full" href="index.html#acciones">Acciones</a><a class="pre" href="#inicio">El taller</a><a class="pre" href="#cronograma">Cronograma</a><a class="pre" href="#especialista">Especialista</a><a class="pre" href="#material">Flyers</a><a href="#contacto">Contacto</a>
   </nav>
   <a class="nav-cta" href="#preinscripcion">Preinscríbete <span>›</span></a>
   <button class="menu" aria-label="Abrir menú" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
@@ -346,7 +350,7 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
 <section class="t-hero">
  <div class="container t-hero-inner">
   <div>
-   <a class="t-back" href="index.html#formacion">‹ Volver a Criminólogos 5.0</a>
+   <a class="t-back full" href="index.html#formacion">‹ Volver a Criminólogos 5.0</a>
    <div class="kicker">Taller especializado · Internacional</div>
    <h1>Evaluación de Riesgo <em>de Violencias</em></h1>
    <p class="t-sub">Del análisis de factores a la formulación del riesgo con enfoque estructurado.</p>
