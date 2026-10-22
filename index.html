@@ -91,7 +91,7 @@ nav a:hover::after,nav a.active::after{content:"";position:absolute;left:0;right
 .card h3{font-size:22px;line-height:1.16;margin:0 0 12px;letter-spacing:-.3px}
 .card p{color:var(--muted);margin:0 auto 22px;font-size:15.5px;max-width:320px}
 .card .btn{margin:auto auto 0;padding:13px 24px;color:#fff;min-width:190px;border:0;cursor:pointer;font-family:inherit;font-size:15px}
-.btn.navy{background:var(--navy);color:#fff;--btn-grad-a:#0b5a8c;--btn-grad-b:#071f38}
+.btn.navy{background:var(--navy);color:#fff;padding:13px 24px;white-space:nowrap;--btn-grad-a:#0b5a8c;--btn-grad-b:#071f38}
 .btn.teal{background:var(--teal);color:#fff;--btn-grad-a:#5aa8a8;--btn-grad-b:#1f5c5c}
 .btn.purple{background:var(--purple);color:#fff;--btn-grad-a:#9c5a99;--btn-grad-b:#532a52}
 .card-note{font-size:12.5px;color:#7c8a98;margin-top:10px}
@@ -136,6 +136,15 @@ nav a:hover::after,nav a.active::after{content:"";position:absolute;left:0;right
 
 /* Calendario del II Encuentro Nacional (Tablero Estratégico, nov-dic 2026) */
 .timeline-wrap{margin-top:44px}
+.law-link{color:var(--blue);font-weight:700;white-space:nowrap;text-decoration:none}
+.law-link:hover{text-decoration:underline}
+.law-banner{display:flex;align-items:center;gap:22px;margin-top:24px;padding:22px 26px;border-radius:20px;background:#fff;border:1px solid var(--line);border-left:6px solid var(--gold);box-shadow:0 10px 30px rgba(13,33,28,.05);text-decoration:none;color:inherit;transition:transform .25s ease,box-shadow .25s ease}
+.law-banner:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.law-ico{flex:0 0 56px;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:var(--gold);font-family:Georgia,serif;font-size:28px;font-weight:700}
+.law-txt{flex:1}
+.law-txt strong{display:block;font-family:Georgia,"Iowan Old Style",serif;font-size:21px;color:var(--ink);margin:4px 0}
+.law-txt small{display:block;color:var(--muted);font-size:14.5px}
+@media(max-width:700px){.law-banner{flex-direction:column;align-items:flex-start}.law-banner .btn{align-self:stretch;justify-content:center}}
 .timeline-head{text-align:center;margin-bottom:26px}
 .timeline-head h3{font-size:28px;margin:8px 0 6px}
 .timeline-head p{color:var(--muted);margin:0;font-size:16px}
@@ -335,7 +344,7 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
     <div class="check"><i>✓</i><div><strong>Registro profesional.</strong> Construir una base nacional de criminólogos y fortalecer su perfil profesional.</div></div>
     <div class="check"><i>✓</i><div><strong>Participación gremial.</strong> Recoger la voz del sector para orientar prioridades, acciones y necesidades.</div></div>
     <div class="check"><i>✓</i><div><strong>Formación aplicada.</strong> Desarrollar competencias útiles para la evaluación, prevención y gestión del riesgo.</div></div>
-    <div class="check"><i>✓</i><div><strong>Impulso institucional.</strong> Promover una iniciativa que contribuya al avance de una Ley de Ejercicio Profesional.</div></div>
+    <div class="check"><i>✓</i><div><strong>Impulso institucional.</strong> Promover una iniciativa que contribuya al avance de una Ley de Ejercicio Profesional. <a class="law-link" href="ley.html">Conoce el proyecto de Ley ›</a></div></div>
    </div>
   </div>
   <aside class="purpose-panel">
@@ -365,6 +374,13 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
    </div>
   </div>
+
+  <!-- Sección informativa: Ley de Ejercicio + Mesas de trabajo (ley.html) -->
+  <a class="law-banner" href="ley.html">
+   <span class="law-ico">§</span>
+   <span class="law-txt"><span class="eyebrow">Impulso institucional</span><strong>Ley de Ejercicio del Criminólogo y Mesas de trabajo</strong><small>Recorrido del proyecto, su estructura, los documentos completos y el trabajo de las mesas del I Encuentro.</small></span>
+   <span class="btn navy">Ver más <span>›</span></span>
+  </a>
 
   <!-- Calendario del II Encuentro Nacional — datos del Tablero Estratégico de Orlando (2026-10-12) -->
   <div class="timeline-wrap">
