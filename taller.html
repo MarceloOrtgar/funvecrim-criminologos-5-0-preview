@@ -298,6 +298,25 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
 .t-cta-btns{display:flex;flex-direction:column;align-items:center;gap:10px}
 .t-mail{color:#cfe2ee;font-size:14px}
 .t-cta-btns button.btn{border:0;cursor:pointer;font-family:inherit;font-size:16px}
+.t-pay{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:34px}
+.t-pay-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:26px 26px 28px}
+.t-pay-card h3{color:var(--gold);font-size:20px;margin:0 0 12px}
+.t-pay-card h3:not(:first-child){margin-top:24px}
+.t-pay-opts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.t-pay-opts div{background:rgba(255,255,255,.08);border-radius:14px;padding:14px 16px;display:grid;grid-template-columns:auto 1fr;column-gap:12px;align-items:center}
+.t-pay-opts b{grid-row:span 2;width:36px;height:36px;border-radius:50%;background:var(--gold);color:#2a1a04;display:grid;place-items:center;font-size:18px}
+.t-pay-opts span{font-size:13px;color:#cfe2ee}
+.t-bank{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;margin:0;font-size:15px}
+.t-bank dt{color:#9fb1c0;font-weight:700}
+.t-bank dd{margin:0;color:#fff;overflow-wrap:anywhere}
+.t-acct{font-family:ui-monospace,Consolas,monospace;font-weight:700;color:var(--gold);letter-spacing:.03em}
+.t-copy{margin-left:6px;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;border-radius:999px;padding:3px 12px;font-size:12px;cursor:pointer}
+.t-copy:hover{background:rgba(255,255,255,.12)}
+.t-steps,.t-notes{margin:0;padding-left:20px;color:#eef4f8;font-size:15px;line-height:1.55}
+.t-steps li,.t-notes li{margin-bottom:6px}
+.t-pay-card .btn{margin-top:18px}
+@media(max-width:920px){.t-pay{grid-template-columns:1fr}}
+@media(max-width:560px){.t-pay-opts{grid-template-columns:1fr}.t-pay-card{padding:20px 18px}}
 .t-form{margin-top:32px}
 .t-form iframe{display:block;width:100%;max-width:760px;height:1500px;margin:0 auto;border:0;border-radius:16px;background:#fff}
 .t-form-alt{display:block;text-align:center;margin-top:12px;color:#cfe2ee;font-size:14px}
@@ -341,7 +360,7 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
   <nav aria-label="Navegación principal">
    <a class="full" href="index.html#inicio">Inicio</a><a class="full" href="index.html#movimiento">Movimiento</a><a class="full" href="index.html#participa">Participa</a><a class="full" href="index.html#acciones">Acciones</a><a class="pre" href="#inicio">El taller</a><a class="pre" href="#cronograma">Cronograma</a><a class="pre" href="#especialista">Especialista</a><a class="pre" href="#material">Flyers</a><a href="#contacto">Contacto</a>
   </nav>
-  <a class="nav-cta" href="#preinscripcion">Preinscríbete <span>›</span></a>
+  <a class="nav-cta" href="#inscripcion">Inscríbete <span>›</span></a>
   <button class="menu" aria-label="Abrir menú" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
  </div>
 </header>
@@ -360,7 +379,7 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
     <li>Dictado por una referente internacional en la materia</li>
    </ul>
    <div class="t-actions">
-    <a class="btn gold" href="#preinscripcion">Preinscríbete <span>›</span></a>
+    <a class="btn gold" href="#inscripcion">Inscríbete <span>›</span></a>
     <a class="btn ghost" href="#especialista">Conoce a la especialista</a>
    </div>
   </div>
@@ -376,7 +395,7 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
   <div class="t-fact"><span>Fechas</span><strong>30 nov — 11 dic 2026</strong></div>
   <div class="t-fact"><span>Modalidad</span><strong>Sincrónica + asincrónica</strong></div>
   <div class="t-fact"><span>Carga horaria</span><strong>14 horas</strong><small>8 h sincrónicas + 6 h asincrónicas</small></div>
-  <div class="t-fact"><span>Inscripción</span><strong>$40</strong><small>pagaderos en bolívares a tasa BCV</small></div>
+  <div class="t-fact"><span>Inscripción</span><strong>$40</strong><small>en bolívares a tasa BCV · 1 pago o 2 cuotas</small></div>
  </div>
 </section>
 
@@ -489,6 +508,7 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
    <p>Toca una pieza para verla en grande y descargarla.</p>
   </div>
   <div class="t-gallery">
+   <a href="assets/taller/flyer-inscripcion.jpg" data-lb><img src="assets/taller/flyer-inscripcion.jpg" alt="Flyer: Inscripciones abiertas" loading="lazy" /></a>
    <a href="assets/taller/flyer-taller.jpg" data-lb><img src="assets/taller/flyer-taller.jpg" alt="Flyer: Taller Evaluación de Riesgo de Violencias" loading="lazy" /></a>
    <a href="assets/taller/flyer-especialista.jpg" data-lb><img src="assets/taller/flyer-especialista.jpg" alt="Flyer: Conoce a la especialista" loading="lazy" /></a>
    <a href="assets/taller/flyer-aprenderas.jpg" data-lb><img src="assets/taller/flyer-aprenderas.jpg" alt="Flyer: ¿Qué aprenderás?" loading="lazy" /></a>
@@ -499,21 +519,47 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
  </div>
 </section>
 
-<section class="cta" id="preinscripcion">
+<section class="cta" id="inscripcion">
+ <span id="preinscripcion"></span>
  <div class="container cta-inner">
   <div class="cta-copy">
-   <small>Preinscripción abierta</small>
+   <small>Inscripciones abiertas</small>
    <h2>Asegura tu <span>cupo</span></h2>
-   <p>Inscripción: $40, pagaderos en bolívares a tasa BCV. Llena el formulario de preinscripción y te contactaremos con los datos para formalizar tu inscripción.</p>
+   <p>Inscripción: $40, pagaderos en bolívares a tasa BCV, en un solo pago o en dos cuotas. Haz tu transferencia y completa el formulario de inscripción con tu comprobante.</p>
   </div>
   <div class="t-cta-btns">
-   <button class="btn" type="button" id="pre-toggle" aria-expanded="false" aria-controls="pre-form">Preinscríbete aquí <span>›</span></button>
+   <a class="btn" href="https://forms.gle/Ra3NNjc4K4vAk5Na9" target="_blank" rel="noopener">Inscríbete aquí <span>›</span></a>
    <a class="t-mail" href="https://wa.me/584164720862?text=Hola%2C%20tengo%20una%20duda%20sobre%20el%20Taller%20de%20Evaluaci%C3%B3n%20de%20Riesgo%20de%20Violencias" target="_blank" rel="noopener">¿Dudas? Escríbenos por WhatsApp o a Funvecrim@gmail.com</a>
   </div>
  </div>
- <div class="container t-form" id="pre-form" hidden>
-  <iframe data-src="https://docs.google.com/forms/d/e/1FAIpQLSdok_3_rpWeoCXYSImQBFReZEPF9RpGsmcrVZJkwdqNnYKhlw/viewform?embedded=true" title="Formulario de preinscripción al taller" loading="lazy">Cargando…</iframe>
-  <a class="t-form-alt" href="https://docs.google.com/forms/d/e/1FAIpQLSdok_3_rpWeoCXYSImQBFReZEPF9RpGsmcrVZJkwdqNnYKhlw/viewform" target="_blank" rel="noopener">¿No carga? Abre el formulario en una pestaña nueva ↗</a>
+ <div class="container t-pay">
+  <div class="t-pay-card">
+   <h3>Formas de pago</h3>
+   <div class="t-pay-opts"><div><b>1</b><strong>Un solo pago</strong><span>Más práctico, más sencillo.</span></div><div><b>2</b><strong>Dos cuotas</strong><span>Para mayor flexibilidad.</span></div></div>
+   <h3>Datos bancarios</h3>
+   <dl class="t-bank">
+    <dt>Banco</dt><dd>Mercantil · Cuenta corriente</dd>
+    <dt>Cuenta</dt><dd><span class="t-acct" id="acct">01050065641065290764</span> <button type="button" class="t-copy" data-copy="01050065641065290764">Copiar</button></dd>
+    <dt>A nombre de</dt><dd>Corporación Parque Tecnológico de Mérida</dd>
+    <dt>RIF</dt><dd>J-301400674</dd>
+   </dl>
+  </div>
+  <div class="t-pay-card">
+   <h3>Requisitos</h3>
+   <ol class="t-steps">
+    <li>Haz tu transferencia indicando en el concepto tu nombre completo, número de cédula y el concepto de la transferencia.</li>
+    <li>Envía el comprobante de pago (PDF) al correo que te indique el formulario de inscripción.</li>
+    <li>El comprobante no debe enviarse al correo de la CPTM.</li>
+   </ol>
+   <h3>Importante</h3>
+   <ul class="t-notes">
+    <li>Los pagos se gestionan únicamente en bolívares.</li>
+    <li>El registro y la validación del pago se hacen una vez enviado el comprobante y verificada la información.</li>
+    <li>Revisa bien los datos bancarios antes de transferir.</li>
+    <li>Cuando se valide tu pago recibirás por correo la confirmación de tu inscripción y las instrucciones de acceso a la plataforma del taller.</li>
+   </ul>
+   <a class="btn gold" href="https://forms.gle/Ra3NNjc4K4vAk5Na9" target="_blank" rel="noopener">Ir al formulario de inscripción <span>›</span></a>
+  </div>
  </div>
 </section>
 </main>
@@ -560,11 +606,7 @@ lb.addEventListener('click', function(e){ if(e.target===lb || e.target.classList
 document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeLb(); });
 </script>
 <script>
-(function(){var b=document.getElementById('pre-toggle'),f=document.getElementById('pre-form');if(!b||!f)return;
-function open(){var i=f.querySelector('iframe');if(!i.src)i.src=i.dataset.src;f.hidden=false;b.setAttribute('aria-expanded','true');f.scrollIntoView({behavior:'smooth',block:'start'})}
-b.addEventListener('click',function(){f.hidden?open():(f.hidden=true,b.setAttribute('aria-expanded','false'))});
-document.querySelectorAll('a[href="#preinscripcion"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();open()})});
-if(location.hash==='#preinscripcion')open();})();
+document.querySelectorAll('.t-copy').forEach(function(b){b.addEventListener('click',function(){var t=b.dataset.copy;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='¡Copiado!';setTimeout(function(){b.textContent='Copiar'},1800)},function(){var r=document.createRange();r.selectNodeContents(document.getElementById('acct'));var sel=getSelection();sel.removeAllRanges();sel.addRange(r)})})});
 </script>
 </body>
 </html>
