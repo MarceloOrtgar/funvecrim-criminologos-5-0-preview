@@ -303,6 +303,12 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
 .t-pay-card h3{color:var(--gold);font-size:20px;margin:0 0 12px}
 .t-pay-card h3:not(:first-child){margin-top:24px}
 .t-pay-opts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.t-price{width:100%;border-collapse:collapse;margin:4px 0 6px;font-size:15px}
+.t-price th,.t-price td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.14);text-align:center}
+.t-price thead th{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:800}
+.t-price tbody th{text-align:left;font-weight:700}
+.t-price td{font-family:Georgia,serif;font-size:18px;font-weight:700}
+.t-price-note{font-size:13px;opacity:.75;margin:6px 0 0}
 .t-pay-opts div{background:rgba(255,255,255,.08);border-radius:14px;padding:14px 16px;display:grid;grid-template-columns:auto 1fr;column-gap:12px;align-items:center}
 .t-pay-opts b{grid-row:span 2;width:36px;height:36px;border-radius:50%;background:var(--gold);color:#2a1a04;display:grid;place-items:center;font-size:18px}
 .t-pay-opts span{font-size:13px;color:#cfe2ee}
@@ -395,7 +401,7 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
   <div class="t-fact"><span>Fechas</span><strong>30 nov — 11 dic 2026</strong></div>
   <div class="t-fact"><span>Modalidad</span><strong>Sincrónica + asincrónica</strong></div>
   <div class="t-fact"><span>Carga horaria</span><strong>14 horas</strong><small>8 h sincrónicas + 6 h asincrónicas</small></div>
-  <div class="t-fact"><span>Inscripción</span><strong>$40</strong><small>en bolívares a tasa BCV · 1 pago o 2 cuotas</small></div>
+  <div class="t-fact"><span>Inscripción</span><strong>$40 · $50</strong><small>$40 preinscritos · $50 sin preinscripción · en Bs a tasa BCV</small></div>
  </div>
 </section>
 
@@ -525,7 +531,7 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
   <div class="cta-copy">
    <small>Inscripciones abiertas</small>
    <h2>Asegura tu <span>cupo</span></h2>
-   <p>Inscripción: $40, pagaderos en bolívares a tasa BCV, en un solo pago o en dos cuotas. Haz tu transferencia y completa el formulario de inscripción con tu comprobante.</p>
+   <p>Inscripción: $40 si te preinscribiste y $50 si no lo hiciste, pagaderos en bolívares a tasa BCV, en un solo pago o en dos cuotas. Haz tu transferencia y completa el formulario de inscripción con tu comprobante.</p>
   </div>
   <div class="t-cta-btns">
    <a class="btn" href="https://forms.gle/Ra3NNjc4K4vAk5Na9" target="_blank" rel="noopener">Inscríbete aquí <span>›</span></a>
@@ -536,6 +542,15 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
   <div class="t-pay-card">
    <h3>Formas de pago</h3>
    <div class="t-pay-opts"><div><b>1</b><strong>Un solo pago</strong><span>Más práctico, más sencillo.</span></div><div><b>2</b><strong>Dos cuotas</strong><span>Para mayor flexibilidad.</span></div></div>
+   <h3>Montos</h3>
+   <table class="t-price">
+    <thead><tr><th></th><th>Un solo pago</th><th>Dos cuotas</th></tr></thead>
+    <tbody>
+     <tr><th>Preinscritos</th><td>$40</td><td>$20 + $20</td></tr>
+     <tr><th>Sin preinscripción</th><td>$50</td><td>$25 + $25</td></tr>
+    </tbody>
+   </table>
+   <p class="t-price-note">Montos en dólares, pagaderos en bolívares a tasa BCV.</p>
    <h3>Datos bancarios</h3>
    <dl class="t-bank">
     <dt>Banco</dt><dd>Mercantil · Cuenta corriente</dd>
