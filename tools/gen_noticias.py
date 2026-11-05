@@ -23,7 +23,7 @@ N = [
      'Las participantes de la Escuela de Criminología de la ULA siguen fortaleciendo sus capacidades de liderazgo y construyendo herramientas para la transformación social, hacia una sociedad más justa e igualitaria.',
      'La Escuela agradeció a la profesora María Gabriela Contreras, facilitadora de uno de los módulos, y a la criminóloga Josy Querales, organizadora de la iniciativa.'],
   cita='¡Que nunca nos falten las alas ni el valor para transformar nuestra realidad!'),
- dict(slug='i-encuentro-gracias', img=None, tag='Comunidad estudiantil', fecha='Octubre 2026',
+ dict(slug='i-encuentro-gracias', img='i-encuentro-gracias.jpg', pos='center 45%', tag='Comunidad estudiantil', fecha='Octubre 2026',
   t='Gracias por hacer posible el I Encuentro de Criminología',
   r='Las consejeras estudiantiles agradecen la participación y anuncian una próxima Asamblea de Estudiantes.',
   p=['Las consejeras de la Escuela de Criminología, Rusmairy y Michell, agradecieron a todos los que se sumaron al I Encuentro de Criminología: ver el evento lleno de vida y a los estudiantes comprometidos con lo que estudian les recuerda por qué aman esta carrera.',
