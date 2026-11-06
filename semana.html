@@ -357,17 +357,14 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
 .s-hero .t-hero-inner{grid-template-columns:1.15fr .85fr}
 .s-poster{justify-self:center;display:block;border-radius:18px;overflow:hidden;border:4px solid var(--gold);box-shadow:0 24px 60px rgba(0,0,0,.35);width:min(380px,100%)}
 .s-poster img{display:block;width:100%;height:auto}
-.s-experts{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.s-experts{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
 .s-expert{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(13,33,28,.08);display:flex;flex-direction:column}
 .s-expert video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:#071f38}
-.s-expert-body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.s-expert-body{padding:16px 16px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
 .s-expert-body span{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--purple)}
-.s-expert-body h3{font-size:19px;margin:0;line-height:1.15;color:var(--navy)}
+.s-expert-body h3{font-size:18px;margin:0;line-height:1.15;color:var(--navy)}
 .s-expert-body p{margin:0;font-size:15px;color:var(--muted)}
 .s-expert-body a{margin-top:auto;font-size:14px;font-weight:700;color:var(--blue);text-decoration:none}
-.s-expert.soon{background:linear-gradient(135deg,#0a3258,#1b5a86 60%,#2f8a8a);color:#fff;border:0;justify-content:center;align-items:center;text-align:center;padding:30px 22px;min-height:260px}
-.s-expert.soon strong{font-family:Georgia,serif;font-size:22px;display:block;margin-bottom:6px}
-.s-expert.soon p{margin:0;color:#dfe9f2;font-size:15px}
 .s-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .s-step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
 .s-step b{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;margin-bottom:10px}
@@ -376,7 +373,8 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
 .s-step small{display:block;color:var(--gold);font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:12.5px;margin-bottom:6px}
 .s-step p{margin:0;color:var(--muted);font-size:15px}
 .s-gallery img{aspect-ratio:auto}
-@media(max-width:1100px){.s-experts{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:1100px){.s-experts{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.s-experts{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:920px){.s-hero .t-hero-inner{grid-template-columns:1fr}.s-steps{grid-template-columns:1fr}.s-poster{width:min(300px,100%)}}
 @media(max-width:560px){.s-experts{grid-template-columns:1fr}}
 </style>
@@ -453,7 +451,10 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
     <video src="assets/semana/video-eglimary.mp4" poster="assets/semana/video-eglimary.jpg" controls playsinline preload="none" aria-label="Presentación de Crim. Eglimary Varela"></video>
     <div class="s-expert-body"><span>Foro chat con expertos</span><h3>Crim. Eglimary Varela</h3><p>La conducta como evidencia: aportes de la criminología forense a la investigación penal</p><a href="assets/semana/afiche-eglimary.jpg" data-lb aria-label="Ver afiche de Crim. Eglimary Varela"><img src="assets/semana/afiche-eglimary.jpg" alt="Afiche: Crim. Eglimary Varela" hidden />Ver afiche ›</a></div>
    </article>
-   <article class="s-expert soon"><div><strong>Un experto más</strong><p>Muy pronto anunciaremos al próximo invitado del foro.</p></div></article>
+   <article class="s-expert">
+    <video src="assets/semana/video-cristina.mp4" poster="assets/semana/video-cristina.jpg" controls playsinline preload="none" aria-label="Presentación de Cristina Coronado Asuaje"></video>
+    <div class="s-expert-body"><span>Foro chat con expertos</span><h3>Cristina Coronado Asuaje</h3><p>Neurocriminología en la medición de estados de peligrosidad</p><a href="assets/semana/afiche-cristina.jpg" data-lb aria-label="Ver afiche de Cristina Coronado Asuaje"><img src="assets/semana/afiche-cristina.jpg" alt="Afiche: Cristina Coronado Asuaje" hidden />Ver afiche ›</a></div>
+   </article>
   </div>
  </div>
 </section>
@@ -485,6 +486,7 @@ footer{background:#071f38;color:#fff;padding:40px 0 34px}
    <a href="assets/semana/afiche-jose.jpg" data-lb><img src="assets/semana/afiche-jose.jpg" alt="Afiche: Crim. José L. Cubillán R." loading="lazy" /></a>
    <a href="assets/semana/afiche-ana.jpg" data-lb><img src="assets/semana/afiche-ana.jpg" alt="Afiche: Crim. Ana Vargas" loading="lazy" /></a>
    <a href="assets/semana/afiche-eglimary.jpg" data-lb><img src="assets/semana/afiche-eglimary.jpg" alt="Afiche: Crim. Eglimary Varela" loading="lazy" /></a>
+   <a href="assets/semana/afiche-cristina.jpg" data-lb><img src="assets/semana/afiche-cristina.jpg" alt="Afiche: Cristina Coronado Asuaje" loading="lazy" /></a>
    <a href="assets/semana/afiche-laura-cuadrado.jpg" data-lb><img src="assets/semana/afiche-laura-cuadrado.jpg" alt="Afiche cuadrado: Crim. Laura María Bastidas Zambrano" loading="lazy" /></a>
    <a href="assets/semana/afiche-jose-cuadrado.jpg" data-lb><img src="assets/semana/afiche-jose-cuadrado.jpg" alt="Afiche cuadrado: Crim. José L. Cubillán R." loading="lazy" /></a>
    <a href="assets/semana/afiche-ana-cuadrado.jpg" data-lb><img src="assets/semana/afiche-ana-cuadrado.jpg" alt="Afiche cuadrado: Crim. Ana Vargas" loading="lazy" /></a>
